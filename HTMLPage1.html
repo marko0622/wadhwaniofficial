@@ -1,0 +1,2555 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Cleaning Services Manila - Ignite E-clean Co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --yellow: #F5C518;
+            --yellow-dark: #e0b000;z
+            --black: #1a1a1a;
+            --dark: #222;
+            --gray: #555;
+            --light-gray: #f5f5f5;
+            --white: #fff;
+            --border: #e0e0e0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Open Sans',sans-serif;
+            color: var(--dark);
+            background: linear-gradient( 180deg, #fffdf3 0%, #fff6cc 50%, #ffffff 100% );
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            gap: 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-bee {
+            width: 48px;
+            height: 48px;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+            color: var(--black);
+            line-height: 1.1;
+        }
+
+            .logo-text span {
+                color: var(--yellow-dark);
+            }
+
+        .logo-sub {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--gray);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 28px;
+        }
+
+            .nav-links a {
+                text-decoration: none;
+                color: var(--dark);
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+                font-size: 13.5px;
+                transition: color .2s;
+            }
+
+                .nav-links a:hover {
+                    color: var(--yellow-dark);
+                }
+
+        .btn-book-nav {
+            background: var(--yellow);
+            color: var(--black);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 13px;
+            padding: 10px 22px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background .2s, transform .1s;
+            white-space: nowrap;
+        }
+
+            .btn-book-nav:hover {
+                background: var(--yellow-dark);
+                transform: translateY(-1px);
+            }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+            .hamburger span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background: var(--dark);
+                border-radius: 2px;
+                transition: all .3s;
+            }
+
+        .mobile-menu {
+            display: none;
+            background: var(--white);
+            border-top: 2px solid var(--yellow);
+            padding: 20px;
+        }
+
+            .mobile-menu.open {
+                display: block;
+            }
+
+            .mobile-menu ul {
+                list-style: none;
+            }
+
+            .mobile-menu li {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .mobile-menu a {
+                display: block;
+                padding: 13px 0;
+                text-decoration: none;
+                color: var(--dark);
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+                font-size: 15px;
+            }
+
+            .mobile-menu .btn-book-nav {
+                display: block;
+                text-align: center;
+                margin-top: 16px;
+            }
+
+        /* ── HERO SLIDER ── */
+        .hero {
+            position: relative;
+            height: 560px;
+            overflow: hidden;
+        }
+
+        @media(max-width: 768px) {
+            .hero {
+                height: 420px;
+            }
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0;
+            transition: opacity .9s ease;
+            z-index: 0;
+        }
+
+            .slide.active {
+                opacity: 1;
+                z-index: 1;
+            }
+
+        .slide-1 {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .slide-2 {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%);
+        }
+
+        .slide-3 {
+            background: linear-gradient(135deg, #212529 0%, #343a40 50%, #495057 100%);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(245,197,24,.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(26px, 5vw, 52px);
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 20px rgba(0,0,0,.4);
+            max-width: 800px;
+        }
+
+            .slide h1 span {
+                color: var(--yellow);
+            }
+
+        .slide p {
+            color: rgba(255,255,255,.85);
+            font-size: clamp(14px, 2vw, 18px);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn-book {
+            background: var(--yellow);
+            color: var(--black);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            padding: 14px 36px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background .2s, transform .15s, box-shadow .2s;
+            box-shadow: 0 4px 20px rgba(245,197,24,.4);
+            display: inline-block;
+        }
+
+            .btn-book:hover {
+                background: var(--yellow-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 28px rgba(245,197,24,.5);
+            }
+
+        .slider-arrows {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.4);
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all .3s;
+        }
+
+            .slider-dot.active {
+                background: var(--yellow);
+                border-color: var(--yellow);
+                transform: scale(1.2);
+            }
+
+        .slide-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,.4);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 18px;
+            transition: all .2s;
+            backdrop-filter: blur(4px);
+        }
+
+            .slide-arrow:hover {
+                background: var(--yellow);
+                border-color: var(--yellow);
+                color: var(--black);
+            }
+
+            .slide-arrow.prev {
+                left: 20px;
+            }
+
+            .slide-arrow.next {
+                right: 20px;
+            }
+
+        /* Bee icons inside slides */
+        .bee-icon {
+            font-size: clamp(40px, 8vw, 80px);
+            margin-bottom: 16px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+       
+        /* ── SECTIONS SHARED ── */
+        section {
+            padding: 72px 20px;
+        }
+
+        .section-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--yellow-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(24px, 4vw, 38px);
+            color: var(--black);
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        /* ── REVIEWS ── */
+        .reviews-section {
+            background: #fff9e6;
+        }
+
+        .review-card {
+            background: white;
+            border: 1px solid #ffe28a;
+            box-shadow: 0 8px 24px rgba(245,197,24,.12);
+            border-left: 5px solid var(--yellow);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .review-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 16px rgba(0,0,0,.07);
+            border-left: 4px solid var(--yellow);
+            transition: transform .2s, box-shadow .2s;
+        }
+        /* ── PRICING SECTION ── */
+        .pricing-section {
+            background: #fffdf2;
+            padding: 70px 20px;
+        }
+
+        .pricing-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+            .pricing-title h2 {
+                font-family: 'Montserrat';
+                font-size: 35px;
+                font-weight: 900;
+                color: #111827;
+            }
+
+            .pricing-title p {
+                color: #7a5c00; /* gold-brown instead of gray */
+            }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .price-card {
+            background: #ffffff;
+            border: 1px solid #ffe08a;
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            transition: .3s;
+            box-shadow: 0 10px 25px rgba(245,197,24,.12);
+        }
+
+            .price-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 16px 35px rgba(245,197,24,.18);
+            }
+
+
+        /* highlighted card */
+        .popular {
+            background: linear-gradient( 135deg, #f5c518, #ffd84d );
+            color: #111827;
+            transform: scale(1.05);
+            border: none;
+        }
+
+            .popular h3,
+            .popular .price,
+            .popular li {
+                color: #111827;
+            }
+
+        .price-card h3 {
+            margin-bottom: 12px;
+            color: #111827;
+            font-weight: 800;
+        }
+
+        .price {
+            font-size: 40px;
+            font-weight: 900;
+            color: #111827;
+            margin: 18px 0;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin: 22px 0;
+            text-align: left;
+        }
+
+            .price-card ul li {
+                margin: 12px 0;
+                color: #5c4700; /* replaces gray */
+            }
+
+        .price-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #111827;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+            .price-btn:hover {
+                background: #f5c518;
+                color: #111827;
+            }
+
+        .popular .price-btn {
+            background: #111827;
+            color: white;
+        }
+
+            .popular .price-btn:hover {
+                background: white;
+                color: #111827;
+            }
+
+        .review-stars {
+            color: #f5b400;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: var(--yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+
+        .reviewer-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--dark);
+        }
+
+        .read-more-link {
+            display: inline-block;
+            margin-top: 36px;
+            background: var(--black);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background .2s;
+        }
+
+            .read-more-link:hover {
+                background: var(--yellow);
+                color: var(--black);
+            }
+
+        /* ── SERVICES ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            border: 1.5px solid var(--border);
+            padding: 30px 26px;
+            transition: all .25s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .service-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: var(--yellow);
+                transform: scaleX(0);
+                transition: transform .3s;
+                transform-origin: left;
+            }
+
+            .service-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .service-card:hover {
+                box-shadow: 0 8px 32px rgba(0,0,0,.12);
+                transform: translateY(-4px);
+                border-color: var(--yellow);
+            }
+
+        .service-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+        }
+
+        .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .service-card p {
+            font-size: 13.5px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .service-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: var(--yellow-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+            .service-link:hover {
+                text-decoration: underline;
+            }
+
+        .more-services {
+            display: inline-block;
+            margin-top: 36px;
+            border: 2px solid var(--yellow-dark);
+            color: var(--yellow-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all .2s;
+        }
+
+            .more-services:hover {
+                background: var(--yellow);
+                border-color: var(--yellow);
+                color: var(--black);
+            }
+
+        /* ── CTA BANNER ── */
+        .cta-banner {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            padding: 64px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .cta-banner::before {
+                content: '🔥';
+                position: absolute;
+                font-size: 200px;
+                opacity: .04;
+                right: -30px;
+                top: -40px;
+                pointer-events: none;
+            }
+
+            .cta-banner h2 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 900;
+                font-size: clamp(22px, 4vw, 38px);
+                color: var(--white);
+                margin-bottom: 12px;
+                line-height: 1.2;
+            }
+
+                .cta-banner h2 span {
+                    color: var(--yellow);
+                }
+
+            .cta-banner p {
+                color: rgba(255,255,255,.75);
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+        /* ── BLOG ── */
+        .blog-section {
+            background: #fff7d1;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,.07);
+            transition: transform .2s, box-shadow .2s;
+            cursor: pointer;
+        }
+
+            .blog-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 28px rgba(0,0,0,.13);
+            }
+
+        .blog-thumb {
+            height: 180px;
+            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+        }
+
+        .blog-body {
+            padding: 22px;
+        }
+
+        .blog-meta {
+            font-size: 11.5px;
+            color: #999;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+        }
+
+        .blog-body h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .blog-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ── ABOUT ── */
+        .about-section {
+            background: var(--white);
+        }
+
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media(max-width: 768px) {
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        .about-text p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        .about-visual {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            border-radius: 16px;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            color: white;
+            text-align: center;
+            padding: 32px;
+        }
+
+            .about-visual .big-bee {
+                font-size: 80px;
+                animation: float 3s ease-in-out infinite;
+            }
+
+        .about-stat {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            opacity: .8;
+        }
+
+            .about-stat strong {
+                display: block;
+                font-size: 30px;
+                font-weight: 900;
+                color: var(--yellow);
+            }
+        /* ── FOOTER ── */
+        footer {
+            background: #0b0b0b; /* solid dark */
+            color: #ffffff;
+            padding: 60px 20px 0;
+        }
+
+        .footer-inner {
+            max-width: 1160px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,.15);
+        }
+
+        .footer-brand .logo-text {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+            .footer-brand .logo-text span {
+                color: #F5C518;
+            }
+
+        .footer-brand p {
+            color: #d4d4d4;
+            line-height: 1.8;
+        }
+
+        .footer-contact {
+            color: #F5C518;
+            margin-top: 20px;
+        }
+
+            .footer-contact a {
+                color: #F5C518;
+                text-decoration: none;
+            }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 18px;
+            font-size: 18px;
+        }
+
+        .footer-col a {
+            color: #d6d6d6;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+            .footer-col a:hover {
+                color: #F5C518;
+            }
+
+        .footer-bottom {
+            padding: 25px 0;
+            display: flex;
+            justify-content: space-between;
+            color: #bfbfbf;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1d1d1d;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+            .social-links a:hover {
+                background: #F5C518;
+                color: #111;
+            }
+        /* ── BOOKING MODAL ── */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.6);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+            .modal-overlay.open {
+                display: flex;
+            }
+
+        .modal {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px 36px;
+            max-width: 480px;
+            width: 100%;
+            position: relative;
+            animation: slideUp .3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--gray);
+            line-height: 1;
+        }
+
+        .modal h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            margin-bottom: 6px;
+            color: var(--black);
+        }
+
+        .modal .bee-line {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+            .form-group label {
+                display: block;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+                font-size: 12px;
+                color: var(--dark);
+                margin-bottom: 6px;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 11px 14px;
+                border: 1.5px solid var(--border);
+                border-radius: 6px;
+                font-size: 14px;
+                font-family: 'Open Sans', sans-serif;
+                color: var(--dark);
+                background: var(--white);
+                transition: border-color .2s;
+            }
+
+                .form-group input:focus,
+                .form-group select:focus,
+                .form-group textarea:focus {
+                    outline: none;
+                    border-color: var(--yellow-dark);
+                    box-shadow: 0 0 0 3px rgba(245,197,24,.15);
+                }
+
+        .checkbox-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+            .checkbox-row input {
+                width: auto;
+                margin-top: 2px;
+            }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: #1565d8;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+            .btn-submit:hover {
+                background: #0f57be;
+            }
+            .btn-submit:hover {
+                background: var(--yellow-dark);
+            }
+
+        /* ── SCROLL TO TOP ── */
+        .scroll-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: var(--yellow);
+            color: var(--black);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 16px rgba(0,0,0,.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all .3s;
+            border: none;
+        }
+
+            .scroll-top.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .scroll-top:hover {
+                background: var(--yellow-dark);
+                transform: translateY(-2px);
+            }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width: 900px) {
+            .nav-links, .btn-book-nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media(max-width: 600px) {
+            section {
+                padding: 52px 16px;
+            }
+
+            .modal {
+                padding: 30px 22px;
+            }
+
+            .slide-arrow {
+                display: none;
+            }
+            /* ── COMPANY STORY ── */
+
+            .story-section {
+                background: #fff;
+                padding: 80px 20px;
+            }
+
+            .story-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+                align-items: start;
+            }
+
+            .story-box {
+                background: #fff;
+                padding: 35px;
+                border-radius: 15px;
+                border: 1px solid #eee;
+                box-shadow: 0 5px 20px rgba(0,0,0,.05);
+                height: 100%;
+            }
+
+                .story-box h3 {
+                    margin-bottom: 15px;
+                    font-size: 24px;
+                }
+
+                .story-box p {
+                    line-height: 1.8;
+                    color: #444;
+                }
+
+            @media(max-width:800px) {
+                .story-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+
+
+            /* ── TERMS ── */
+
+            .terms-section {
+                background: #fafafa;
+                padding: 80px 20px;
+            }
+
+            .terms-box {
+                background: white;
+                max-width: 1000px;
+                margin: auto;
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,.06);
+            }
+
+                .terms-box h3 {
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                    font-family: 'Montserrat';
+                }
+
+                .terms-box p,
+                .terms-box li {
+                    line-height: 1.8;
+                    color: #444;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="logo">
+
+                <ellipse cx="24" cy="26" rx="14" ry="10" fill="#F5C518" />
+                <ellipse cx="24" cy="26" rx="14" ry="10" fill="url(#beeGrad)" />
+                <rect x="16" y="22" width="16" height="3" rx="1.5" fill="#1a1a1a" opacity=".8" />
+                <rect x="16" y="27" width="16" height="3" rx="1.5" fill="#1a1a1a" opacity=".8" />
+                <ellipse cx="24" cy="17" rx="7" ry="6" fill="#F5C518" />
+                <ellipse cx="20" cy="14" rx="6" ry="4" fill="rgba(180,220,255,.7)" transform="rotate(-20 20 14)" />
+                <ellipse cx="28" cy="14" rx="6" ry="4" fill="rgba(180,220,255,.7)" transform="rotate(20 28 14)" />
+                <circle cx="21" cy="16" r="1.5" fill="#1a1a1a" />
+                <circle cx="27" cy="16" r="1.5" fill="#1a1a1a" />
+                <defs>
+                    <linearGradient id="beeGrad" x1="10" y1="16" x2="38" y2="36" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#FFD940" />
+                        <stop offset="100%" stop-color="#F5A800" />
+                    </linearGradient>
+                </defs>
+                </svg>
+                <div>
+                    <div class="logo-text"><span>Ignite E-clean</span> Co.</div>
+                    <div class="logo-sub">Professional Cleaning</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#services">Services</a></li>
+
+                <li><a href="#about">About Us</a></li>
+
+                <li><a href="#blog">Blog</a></li>
+
+                <li>
+                    <a href="#"
+                       onclick="openStory(); return false;">
+
+                        Our Story
+
+                    </a>
+                </li>
+
+            </ul>
+            <a href="#" class="btn-book-nav" onclick="openModal(); return false;">Book Now</a>
+            <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
+                <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
+                <li><a href="#reviews" onclick="toggleMobileMenu()">Reviews</a></li>
+                <li><a href="#blog" onclick="toggleMobileMenu()">Blog</a></li>
+                <li>
+
+                    <a href="#"
+                       onclick="openStory();
+                toggleMobileMenu();
+                return false;">
+
+                        Our Story
+
+                    </a>
+
+                </li>
+                <li><a href="#about" onclick="toggleMobileMenu()">About Us</a></li>
+            </ul>
+            <a href="#" class="btn-book-nav" onclick="openModal(); toggleMobileMenu(); return false;">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO SLIDER -->
+    <section class="hero" id="home">
+        <div class="slide active slide-1">
+            <div class="bee-icon">🔥</div>
+            <h1>#1 Trusted Cleaning Service<br>in <span>The Metro</span></h1>
+            <p>A Healthier, Cleaner Home.</p>
+            <a href="#" class="btn-book" onclick="openModal(); return false;">Book Now</a>
+        </div>
+        <div class="slide slide-2">
+            <div class="bee-icon">✨</div>
+            <h1>The Best Cleaners Are <span>Ready</span><br>For Your Home</h1>
+            <p>Experience Ignite E-Clean Co. most rated deep cleaning process.</p>
+            <a href="#" class="btn-book" onclick="openModal(); return false;">Book Now</a>
+        </div>
+        <div class="slide slide-3">
+            <div class="bee-icon">⭐</div>
+            <h1>Rated <span>4.8 Stars</span> by Over<br>2,200 Satisfied Customers</h1>
+            <p>Stellar sky-high reviews by customers, businesses, and celebrities!</p>
+            <a href="#" class="btn-book" onclick="openModal(); return false;">Book Now</a>
+        </div>
+
+        <button class="slide-arrow prev" onclick="changeSlide(-1)">&#8249;</button>
+        <button class="slide-arrow next" onclick="changeSlide(1)">&#8250;</button>
+        <div class="slider-arrows">
+            <div class="slider-dot active" onclick="goSlide(0)"></div>
+            <div class="slider-dot" onclick="goSlide(1)"></div>
+            <div class="slider-dot" onclick="goSlide(2)"></div>
+        </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-inner">
+            <div class="section-tag">Our Services</div>
+            <div class="section-title">We've Got What You Need! 🧹</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛌</div>
+                    <h3>Deep Room Cleaning</h3>
+                    <p>Keep your room fresh and spotless with our detailed cleaning service — dusting furniture, sanitizing surfaces, organizing clutter, and refreshing your space for a cleaner, healthier environment.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Deep Home Cleaning</h3>
+                    <p>Almost every nook and cranny of your home will get special attention from our expert cleaning team.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛁</div>
+                    <h3>Deep Bathroom Cleaning</h3>
+                    <p>Keep your bathroom spotless, sanitized, and odor-free with our deep cleaning service — removing stains, disinfecting surfaces, scrubbing tiles, and refreshing the space for a cleaner, healthier environment.on't let the dirt cling to your sofas and mattresses. It's time to shampoo those long overdue items.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🍳</div>
+                    <h3>Kitchen Deep Cleaning </h3>
+                    <p>Keep your kitchen clean, hygienic, and fresh with our detailed cleaning service — removing grease, sanitizing surfaces, and refreshing the space for a healthier cooking environment.</p>
+                    <a href="#" class="service-link">Learn More →</a>
+                </div>
+
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section">
+
+        <div class="pricing-title">
+            <div class="section-tag">Affordable Prices</div>
+            <h2>Simple, Honest Rates</h2>
+            <p>Choose a cleaning service that fits your needs.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <h3>Room Cleaning</h3>
+
+                <div class="price">
+                    ₱1,200
+                </div>
+
+                <ul>
+                    <li>✔ Deep dusting</li>
+                    <li>✔ Surface sanitizing</li>
+                    <li>✔ Floor cleaning</li>
+                    <li>✔ Bed & furniture cleaning</li>
+                </ul>
+
+                <button class="price-btn"
+                        onclick="openModal()">
+                    Book This Now →
+                </button>
+
+            </div>
+
+
+            <div class="price-card popular">
+
+                <h3>Bathroom Cleaning</h3>
+
+                <div class="price">
+                    ₱2,000
+                </div>
+
+                <ul>
+                    <li>✔ Toilet sanitation</li>
+                    <li>✔ Tile scrubbing</li>
+                    <li>✔ Mold removal</li>
+                    <li>✔ Sink disinfection</li>
+                </ul>
+
+                <button class="price-btn"
+                        onclick="openModal()">
+                    Book This Now →
+                </button>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <h3>Kitchen Cleaning</h3>
+
+                <div class="price">
+                    ₱2,500
+                </div>
+
+                <ul>
+                    <li>✔ Grease removal</li>
+                    <li>✔ Counter sanitizing</li>
+                    <li>✔ Sink cleaning</li>
+                    <li>✔ Appliance wiping</li>
+                </ul>
+
+                <button class="price-btn"
+                        onclick="openModal()">
+                    Book This Now →
+                </button>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <h3>Deep Home Cleaning</h3>
+
+                <div class="price">
+                    ₱5,500
+                </div>
+
+                <ul>
+                    <li>✔ Whole house cleaning</li>
+                    <li>✔ Bathroom cleaning</li>
+                    <li>✔ Kitchen cleaning</li>
+                    <li>✔ Room sanitizing</li>
+                </ul>
+
+                <button class="price-btn"
+                        onclick="openModal()">
+                    Book This Now →
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- CTA BANNER -->
+    <div class="cta-banner">
+        <div style="max-width:700px;margin:0 auto;position:relative;z-index:1;">
+            <h2>The Best Cleaners Are Ready<br><span>For Your Home!</span></h2>
+            <p>Experience Ignite E-clean Cleaning Co. most rated deep cleaning process</p>
+            <a href="#" class="btn-book" onclick="openModal(); return false;">Book Now</a>
+        </div>
+    </div>
+
+    <!-- BLOG -->
+    <section class="blog-section" id="blog">
+        <div class="section-inner">
+            <div class="section-tag">Latest on Ignite E-clean</div>
+            <div class="section-title">Be Informed! 📰</div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <a href="#">
+                        <div class="blog-thumb">📊</div>
+                        <div class="blog-body">
+                            <p class="blog-meta">By Ignite E-clean Cleaning Co &bull; Feb 12, 2026</p>
+                            <h3>94% of employees feel more productive in a clean workspace</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <div class="blog-thumb">☀️</div>
+                        <div class="blog-body">
+                            <p class="blog-meta">By Ignite E-clean Cleaning Co &bull; Mar 06, 2026</p>
+                            <h3>A Seasonal Refresh: The Summer To-Do List No One Talks About</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <div class="blog-thumb">✨</div>
+                        <div class="blog-body">
+                            <p class="blog-meta">By Ignite E-Cleaning Co &bull; Apr 27, 2026</p>
+                            <h3>Energy, Health, and Luck: How a Clean Home Sets the Tone for Better Living</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <div class="blog-thumb">💰</div>
+                        <div class="blog-body">
+                            <p class="blog-meta">Oct 13, 2025</p>
+                            <h3>From Clean to Costly: The Real Price of Not Deep Cleaning Your Home Every Quarter</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <div class="blog-thumb">👨‍👩‍👧</div>
+                        <div class="blog-body">
+                            <p class="blog-meta">By Ignite E-Cleaning Co &bull; Jul 30, 2026</p>
+                            <h3>Keeping the Hive Clean: How Derek &amp; Ellen Maintain a Healthy and Clean Home</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:36px;">
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- REVIEWS -->
+    <section class="reviews-section" id="reviews">
+        <div class="section-inner">
+            <div class="section-tag">What Our Clients Say</div>
+            <div class="section-title">Trusted by Thousands ⭐</div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"My husband was very happy with their service — we tried other cleaning services but Ignite E-clean has exceeded his expectations. Our place feels cleaner and smells so good! Good customer service! We will highly recommend Ignite E-clean!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-img">D</div>
+                        <div class="reviewer-name">Daxe Dela Rosa-Bulos</div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Despite having a fully booked week, they were able to squeeze me in their schedule. They even arrived earlier than expected! Kahit pagod na sila, nalinis pa din nila nang maigi yung unit ko. Amoy-malinis!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-img">V</div>
+                        <div class="reviewer-name">Vanessa Pearl Isturis</div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Highly recommend their service! Ate Gina and Ate Annie arrived on time, worked fast and did not leave any furniture unturned or crevice uncleaned. Attention to detail was spot on. 5/5 service!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-img">L</div>
+                        <div class="reviewer-name">Luigi Angelo Bustamante</div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I'm sooooo happy with your service!! My car feels like a brand new car inside. Super solid yung service niyo. Well done!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-img">J</div>
+                        <div class="reviewer-name">Chef JP Anglo</div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <div class="section-inner">
+            <div class="about-inner">
+                <div class="about-text">
+                    <div class="section-tag">About Ignite E-clean</div>
+                    <div class="section-title" style="margin-bottom:20px;">A Healthier,<br>Cleaner Home 🔥</div>
+                    <p>Ignite E-clean Cleaning Co. is one of the most trusted cleaning services in Metro Manila with the most ratings and reviews averaging 4.8 stars. We strongly advocate in making each individual's home cleaner for a healthier life.</p>
+                    <p>Our company specialized in deep dry cleaning methods experienced and commended by thousands of clients.</p>
+                    <p>Trust in the cleaning service that can give you the BEST results for the BEST rates! All for healthier and cleaner homes.</p>
+                    <a href="#" class="btn-book" style="margin-top:12px;" onclick="openModal(); return false;">Book Now</a>
+                </div>
+                <div class="about-visual">
+                    <div class="big-bee">🔥</div>
+                    <div style="display:flex;gap:36px;flex-wrap:wrap;justify-content:center;">
+                        <div class="about-stat"><strong>4.8★</strong>Average Rating</div>
+                        <div class="about-stat"><strong>2,200+</strong>Happy Customers</div>
+                    </div>
+                    <p style="font-size:13px;opacity:.7;margin-top:8px;">#1 Trusted in Metro Manila</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo-text"><span>Ignite E-clean</span> Cleaning Co.</div>
+                <p>The #1 trusted professional cleaning services in Manila. We do deep house cleaning, dry cleaning, stain removal and post construction cleaning.</p>
+                <div class="footer-contact">
+                    📞 <a href="tel:+639123434556">+63 9123456788</a><br>
+                    ✉️ <a href="">sales@igniteecleaningco.com</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Payment</h4>
+                <p style="font-size:13px;color:rgba(255,255,255,.55);">💳 PayPal<br><a href="" style="color:rgba(255,255,255,.55);">salesigniteecleaningco.com</a></p>
+                <h4 style="margin-top:20px;">Follow Us</h4>
+                <div class="social-links">
+                    <a href="" target="_blank" title="Facebook">f</a>
+                    <a href="" target="_blank" title="Instagram">ig</a>
+                    <a href="" target="_blank" title="Twitter">𝕏</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© Copyright 2026. All rights reserved. Ignite E-clean Cleaning Co.</span>
+            <div class="social-links" style="gap:8px;">
+                <a href=" target="_blank">f</a>
+                <a href="" target="_blank">ig</a>
+                <a href="" target="_blank">𝕏</a>
+            </div>
+        </div>
+    </footer>
+
+
+                  
+        </div>
+
+    </section>
+
+    <!-- ================= BOOKING MODAL ================= -->
+
+    <div class="modal-overlay"
+         id="modalOverlay"
+         onclick="closeModalOutside(event)">
+
+        <div class="modal">
+
+            <button class="modal-close"
+                    onclick="closeModal()">
+                ✕
+            </button>
+
+            <h3>Let's Clean Your Home!</h3>
+
+            <p>
+                Fill in your details and confirm your booking.
+            </p>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName">
+            </div>
+
+            <div class="form-group">
+                <label>Contact Number</label>
+
+                <input type="tel"
+                       id="contactNumber"
+                       placeholder="09XXXXXXXXX"
+                       maxlength="11"
+                       pattern="09[0-9]{9}"
+                       oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="form-group">
+                <label>City</label>
+
+                <select id="city">
+                    <option>Select City</option>
+                    <option>Caloocan</option>
+                    <option>Las Piñas</option>
+                    <option>Makati</option>
+                    <option>Manila</option>
+                    <option>Pasig</option>
+                    <option>Quezon City</option>
+                    <option>Taguig</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Select Service</label>
+
+                <select id="service">
+                    <option>Select Service</option>
+                    <option>Room Cleaning</option>
+                    <option>Bathroom Cleaning</option>
+                    <option>Kitchen Cleaning</option>
+                    <option>Deep Home Cleaning</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Date</label>
+
+                <input type="date"
+                       id="bookingDate">
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Time</label>
+
+                <input type="time"
+                       id="bookingTime">
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+
+                <textarea id="address"></textarea>
+            </div>
+
+            <!-- CITY -->
+
+            <div class="form-group">
+
+                <label>City</label>
+
+                <select>
+
+                    <option>Select City</option>
+
+                    <option>Caloocan</option>
+                    <option>Las Piñas</option>
+                    <option>Makati</option>
+                    <option>Manila</option>
+                    <option>Pasig</option>
+                    <option>Quezon City</option>
+                    <option>Taguig</option>
+
+                </select>
+
+            </div>
+
+
+
+           
+
+
+            <!-- PRIVACY + TERMS -->
+
+            <div class="checkbox-row">
+
+                <input type="checkbox"
+                       id="privacy">
+
+                <label for="privacy">
+
+                    I agree to the
+
+                    <a href="#"
+                       onclick="openPrivacy(); return false;">
+
+                        Privacy Policy
+
+                    </a>
+
+                    and
+
+                    <a href="#"
+                       onclick="openTerms(); return false;">
+
+                        Terms & Conditions
+
+                    </a>
+
+                </label>
+
+            </div>
+
+
+            <button class="btn-submit"
+                    onclick="validateBooking()">
+
+                Confirm Booking
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= PRIVACY MODAL ================= -->
+
+    <div class="modal-overlay"
+         id="privacyModal"
+         onclick="closePrivacyOutside(event)">
+
+        <div class="modal"
+             style="max-width:700px;
+                max-height:85vh;
+                overflow-y:auto;">
+
+            <button class="modal-close"
+                    onclick="closePrivacy()">
+
+                ✕
+
+            </button>
+
+            <h2>Privacy Policy</h2>
+
+            <p>
+                Ignite E-clean Co. protects customer data and
+                uses information only for bookings,
+                communication, and service delivery.
+            </p>
+
+            <h4>Customer Rights</h4>
+
+            <ul>
+
+                <li>Access personal data</li>
+
+                <li>Request corrections</li>
+
+                <li>Request deletion</li>
+
+                <li>Withdraw consent</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= TERMS MODAL ================= -->
+
+    <div class="modal-overlay"
+         id="termsModal"
+         onclick="closeTermsOutside(event)">
+
+        <div class="modal"
+             style="max-width:700px;
+                max-height:85vh;
+                overflow-y:auto;">
+
+            <button class="modal-close"
+                    onclick="closeTerms()">
+
+                ✕
+
+            </button>
+
+            <h3>Terms & Conditions</h3>
+
+            <p>
+                <strong>Effective Date:</strong> January 2026
+            </p>
+
+            <p>
+
+                Welcome to Ignite E-clean Co.
+
+                By booking our cleaning services, submitting forms,
+                or using this website, you agree to the following
+                Terms & Conditions.
+
+                Please read them carefully before confirming a booking.
+
+            </p>
+
+            <hr>
+
+
+            <h4>1. Service Bookings</h4>
+
+            <ul>
+
+                <li>
+                    Bookings are subject to schedule availability.
+                </li>
+
+                <li>
+                    Customers must provide accurate contact information,
+                    service address, and booking details.
+                </li>
+
+                <li>
+                    Incomplete or incorrect information may delay service.
+                </li>
+
+                <li>
+                    Ignite E-clean reserves the right to decline
+                    bookings with false information.
+                </li>
+
+            </ul>
+
+
+
+            <h4>2. Pricing & Payments</h4>
+
+            <ul>
+
+                <li>
+                    Service prices may vary depending on location,
+                    property size, cleaning requirements,
+                    or additional requests.
+                </li>
+
+                <li>
+                    Final costs may be confirmed before service begins.
+                </li>
+
+                <li>
+                    Payments must be completed using accepted methods.
+                </li>
+
+                <li>
+                    Outstanding balances may result in cancelled bookings.
+                </li>
+
+            </ul>
+
+
+
+            <h4>3. Cancellation & Rescheduling Policy</h4>
+
+            <ul>
+
+                <li>
+                    Customers may reschedule appointments in advance.
+                </li>
+
+                <li>
+                    Late cancellations may incur additional charges.
+                </li>
+
+                <li>
+                    Repeated no-shows may affect future bookings.
+                </li>
+
+                <li>
+                    Emergency cancellations by either party
+                    will be handled reasonably.
+                </li>
+
+            </ul>
+
+
+
+            <h4>4. Customer Responsibilities</h4>
+
+            <p>
+                Customers agree to:
+            </p>
+
+            <ul>
+
+                <li>
+                    Provide safe access to the property.
+                </li>
+
+                <li>
+                    Secure valuables, cash, jewelry,
+                    and important documents before service.
+                </li>
+
+                <li>
+                    Inform cleaners about fragile items,
+                    hazards, pets, or special instructions.
+                </li>
+
+                <li>
+                    Maintain respectful communication
+                    with service personnel.
+                </li>
+
+            </ul>
+
+
+
+            <h4>5. Company Responsibilities</h4>
+
+            <p>
+
+                Ignite E-clean Co. agrees to:
+
+            </p>
+
+            <ul>
+
+                <li>
+                    Provide professional cleaning services.
+                </li>
+
+                <li>
+                    Respect customer privacy and property.
+                </li>
+
+                <li>
+                    Perform services with reasonable care,
+                    safety, and professionalism.
+                </li>
+
+                <li>
+                    Respond to concerns or complaints fairly.
+                </li>
+
+            </ul>
+
+
+
+            <h4>6. Property Damage & Liability</h4>
+
+            <p>
+
+                Although care is taken during service,
+                Ignite E-clean Co. is not liable for:
+
+            </p>
+
+            <ul>
+
+                <li>Pre-existing damages</li>
+
+                <li>Hidden defects</li>
+
+                <li>Fragile items not disclosed beforehand</li>
+
+                <li>Normal wear and tear</li>
+
+                <li>Loss caused by unsafe environments</li>
+
+            </ul>
+
+            <p>
+
+                Any reported concerns should be communicated
+                within a reasonable period after service completion.
+
+            </p>
+
+
+
+            <h4>7. Health & Safety</h4>
+
+            <ul>
+
+                <li>
+                    Customers must disclose hazardous conditions.
+                </li>
+
+                <li>
+                    Services may be refused if environments are unsafe.
+                </li>
+
+                <li>
+                    Cleaning personnel may stop service
+                    if safety risks arise.
+                </li>
+
+            </ul>
+
+
+
+            <h4>8. Refusal of Service</h4>
+
+            <p>
+
+                Ignite E-clean Co. reserves the right to
+                refuse or discontinue services due to:
+
+            </p>
+
+            <ul>
+
+                <li>Unsafe conditions</li>
+
+                <li>Abusive behavior</li>
+
+                <li>False booking information</li>
+
+                <li>Illegal activities</li>
+
+                <li>Threats toward staff</li>
+
+            </ul>
+
+
+
+            <h4>9. Privacy & Personal Data</h4>
+
+            <p>
+
+                Customer information collected through bookings
+                is handled according to our Privacy Policy and
+                used only for legitimate business purposes.
+
+            </p>
+
+
+
+            <h4>10. Intellectual Property</h4>
+
+            <p>
+
+                Website content, branding, images,
+                logos, and materials belong to
+                Ignite E-clean Co. and may not be copied
+                without permission.
+
+            </p>
+
+
+
+            <h4>11. Changes to Terms</h4>
+
+            <p>
+
+                Ignite E-clean Co. may update these
+                Terms & Conditions at any time.
+
+                Updated versions will be posted on this website.
+
+            </p>
+
+
+
+            <h4>12. Agreement</h4>
+
+            <p>
+
+                By checking the agreement box and confirming
+                a booking, customers acknowledge that they
+                have read, understood, and accepted these
+                Terms & Conditions.
+
+            </p>
+
+
+
+            <h4>13. Contact Information</h4>
+
+            <p>
+
+                Questions regarding these Terms may be directed to:
+
+                <br><br>
+
+                <strong>Ignite E-clean Co.</strong>
+
+                <br>
+
+                Email:
+                sales@igniteecleaningco.com
+
+                <br>
+
+                Phone:
+                +63 9123456788
+
+            </p>
+
+
+            <hr>
+
+            <p style="font-size:12px;opacity:.7;">
+
+                Last Updated:
+                January 2026
+
+            </p>
+        </div>
+
+    </div>
+
+    <!-- STORY MODAL -->
+
+    <div class="modal-overlay"
+         id="storyModal"
+         onclick="closeStoryOutside(event)">
+
+        <div class="modal"
+             style="max-width:700px;
+                max-height:85vh;
+                overflow-y:auto;">
+
+            <button class="modal-close"
+                    onclick="closeStory()">
+                ✕
+            </button>
+
+            <h2>Our Story</h2>
+
+            <p>
+
+                Ignite E-clean Co. was built from a simple belief:
+                every family deserves to come home to a clean,
+                safe, and healthy environment.
+
+                What started as a small effort to help households
+                struggling with dust, clutter, and unhealthy living
+                conditions slowly became something much bigger —
+                a mission to improve lives through cleanliness.
+
+                We saw hardworking parents arriving home exhausted,
+                students balancing studies in stressful spaces,
+                and families with little time left to maintain
+                the comfort they deserved.
+
+                A clean home is more than appearance.
+
+                It affects health, peace of mind, productivity,
+                confidence, and the moments shared with loved ones.
+
+                We realized cleaning was never only about removing dirt —
+                it was about restoring comfort, reducing stress,
+                and giving people back the feeling of home.
+
+                There were challenges in the beginning:
+                long hours, limited resources,
+                and the pressure of earning trust
+                one customer at a time.
+
+                But every satisfied family,
+                every thankful message,
+                and every transformed home
+                reminded us why we started.
+
+                Today, Ignite E-clean proudly serves
+                thousands of customers across Metro Manila.
+
+                Yet our purpose remains the same:
+
+                to help people breathe easier,
+                live healthier,
+                and enjoy cleaner spaces
+                where memories are made.
+
+                Because behind every clean home
+                is a family that deserves comfort,
+                safety, and peace.
+
+                And that is why Ignite E-clean exists.
+
+            </p>
+
+
+            <h4>Our Mission</h4>
+
+            <p>
+
+                To provide reliable, affordable,
+                and high-quality cleaning services
+                that create healthier homes,
+                lessen everyday stress,
+                and improve the lives of the people we serve.
+
+                We believe cleanliness should never
+                be a luxury but something every family deserves.
+
+            </p>
+
+
+            <h4>Our Vision</h4>
+
+            <p>
+
+                To become the most trusted cleaning company
+                in the Philippines by creating safer homes,
+                stronger communities,
+                and lasting relationships built on care,
+                honesty, and service.
+
+                We aim to be remembered not only
+                for clean spaces,
+                but for the comfort and peace
+                we leave behind.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top"
+            id="scrollTop">
+        ↑
+    </button>
+
+
+   
+
+
+
+           
+
+            <!--SCROLL TO TOP-->
+
+
+            <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+        <script>
+
+            
+                // Slider
+                let current = 0;
+                const slides = document.querySelectorAll('.slide');
+                const dots = document.querySelectorAll('.slider-dot');
+                let autoTimer = setInterval(() => changeSlide(1), 5000);
+
+                function goSlide(n) {
+                    slides[current].classList.remove('active');
+                    dots[current].classList.remove('active');
+                    current = n;
+                    slides[current].classList.add('active');
+                    dots[current].classList.add('active');
+                    clearInterval(autoTimer);
+                    autoTimer = setInterval(() => changeSlide(1), 5000);
+                }
+
+                function changeSlide(dir) {
+                    goSlide((current + dir + slides.length) % slides.length);
+                }
+
+                // Mobile menu
+                function toggleMobileMenu() {
+                    document.getElementById('mobileMenu').classList.toggle('open');
+                }
+
+                // Modal
+                function openModal() {
+                    document.getElementById('modalOverlay').classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                }
+                function closeModal() {
+                    document.getElementById('modalOverlay').classList.remove('open');
+                    document.body.style.overflow = '';
+                }
+                function closeModalOutside(e) {
+                    if (e.target === document.getElementById('modalOverlay')) closeModal();
+                }
+
+                // Scroll to top
+                window.addEventListener('scroll', () => {
+                    const btn = document.getElementById('scrollTop');
+                    if (window.scrollY > 400) btn.classList.add('visible');
+                    else btn.classList.remove('visible');
+                });
+
+                // Smooth nav active state
+                document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(a => {
+                    a.addEventListener('click', function () {
+                        document.querySelectorAll('.nav-links a').forEach(x => x.style.color = '');
+                        this.style.color = 'var(--yellow-dark)';
+                    });
+                });
+                const today =
+                    new Date()
+                        .toISOString()
+                        .split("T")[0];
+
+                document
+                    .getElementById("bookingDate")
+                    .setAttribute("min", today);
+
+
+
+                /* PRIVACY */
+
+                function openPrivacy() {
+
+                    document
+                        .getElementById(
+                            "privacyModal"
+                        )
+                        .classList.add("open");
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+
+                function closePrivacy() {
+
+                    document
+                        .getElementById(
+                            "privacyModal"
+                        )
+                        .classList.remove("open");
+
+                    document.body.style.overflow =
+                        "";
+
+                }
+
+                function closePrivacyOutside(e) {
+
+                    if (
+                        e.target ===
+                        document.getElementById(
+                            "privacyModal"
+                        )
+                    )
+
+                        closePrivacy();
+
+                }
+
+
+
+                /* TERMS */
+
+                function openTerms() {
+
+                    document
+                        .getElementById(
+                            "termsModal"
+                        )
+                        .classList.add("open");
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+
+                function closeTerms() {
+
+                    document
+                        .getElementById(
+                            "termsModal"
+                        )
+                        .classList.remove("open");
+
+                    document.body.style.overflow =
+                        "";
+
+                }
+
+                function closeTermsOutside(e) {
+
+                    if (
+                        e.target ===
+                        document.getElementById(
+                            "termsModal"
+                        )
+                    )
+
+                        closeTerms();
+
+                }
+                /* BOOKING VALIDATION */
+
+            function validateBooking() {
+
+                let name =
+                    document.querySelector(
+                        'input[type="text"]'
+                    ).value.trim();
+
+                let contact =
+                    document.getElementById(
+                        'contactNumber'
+                    ).value.trim();
+
+                let email =
+                    document.querySelector(
+                        'input[type="email"]'
+                    ).value.trim();
+
+                let city =
+                    document.querySelectorAll(
+                        'select'
+                    )[0].value;
+
+                let service =
+                    document.querySelectorAll(
+                        'select'
+                    )[1].value;
+
+                let date =
+                    document.getElementById(
+                        'bookingDate'
+                    ).value;
+
+                let time =
+                    document.getElementById(
+                        'bookingTime'
+                    ).value;
+
+                let address =
+                    document.querySelector(
+                        'textarea'
+                    ).value.trim();
+
+                let privacy =
+                    document.getElementById(
+                        'privacy'
+                    ).checked;
+
+
+                if (
+                    name === "" ||
+                    contact === "" ||
+                    email === "" ||
+                    city === "Select City" ||
+                    service === "Select Service" ||
+                    date === "" ||
+                    time === "" ||
+                    address === ""
+                ) {
+
+                    alert(
+                        "Please complete all required fields."
+                    );
+
+                    return;
+                }
+
+
+                if (!privacy) {
+
+                    alert(
+                        "Please agree to the Privacy Policy and Terms & Conditions."
+                    );
+
+                    return;
+                }
+
+
+                alert(
+                    "✅ Booking completed successfully!\n\nThank you for choosing Ignite E-clean Co.\nWe will contact you shortly."
+                );
+
+
+                closeModal();
+
+
+                document.querySelector(
+                    '.modal'
+                ).querySelectorAll(
+                    'input, textarea, select'
+                ).forEach(field => {
+
+                    if (
+                        field.type === "checkbox"
+                    ) {
+
+                        field.checked = false;
+
+                    } else {
+
+                        field.value = "";
+
+                    }
+
+                });
+
+            }
+
+
+                function openStory() {
+                    document.getElementById("storyModal")
+                        .classList.add("open");
+
+                    document.body.style.overflow = "hidden";
+                }
+
+                function closeStory() {
+                    document.getElementById("storyModal")
+                        .classList.remove("open");
+
+                    document.body.style.overflow = "";
+                }
+
+                function closeStoryOutside(e) {
+                    if (e.target === document.getElementById("storyModal")) {
+                        closeStory();
+                    }
+                }
+    </script>
+</body>
+</html>
